@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react';
 // @ts-expect-error plain JS helper shared with scripts/text-export.mjs
 import { readAll } from './scripts/text-lib.mjs';
 
-/** Website text lives in ../website-text/*.md (edit in Obsidian). Saving a file reloads the preview. */
-const TEXT_DIR = path.resolve(__dirname, '../website-text');
+/** Website text lives in website-text/*.md (edit in Obsidian). Saving a file reloads the preview. */
+const TEXT_DIR = path.resolve(__dirname, 'website-text');
 
 function websiteText(): Plugin {
   const id = 'virtual:website-text';

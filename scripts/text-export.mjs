@@ -9,7 +9,7 @@ import { build } from 'esbuild';
 import { PAGES, parse, serialize } from './text-lib.mjs';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const dir = path.resolve(root, '../website-text');
+const dir = path.resolve(root, 'website-text');
 fs.mkdirSync(dir, { recursive: true });
 
 // Bundle the content modules with the text hook switched off, so we read the code's own text.

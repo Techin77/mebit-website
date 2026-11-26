@@ -4,7 +4,7 @@ import type { Bilingual } from '../i18n';
 const CODE_FIELDS = ['key', 'tone'];
 
 /**
- * Apply the text edited in Obsidian (mebit-website/website-text/*.md) over the text written in code.
+ * Apply the text edited in Obsidian (site-v2/website-text/*.md) over the text written in code.
  * Only existing text lines can be replaced: unknown headings are ignored, and numbers, links and
  * formulas stay in code. If a file or line is missing, the text in code is used.
  */

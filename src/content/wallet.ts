@@ -405,5 +405,5 @@ const walletText: Bilingual<{
   },
 };
 
-/** Text can be edited in Obsidian: mebit-website/website-text (see withText.ts). */
+/** Text can be edited in Obsidian: site-v2/website-text (see withText.ts). */
 export const wallet = withText('wallet', walletText);
