@@ -7,7 +7,7 @@ page: home
 > `<wbr>` is an invisible mark that lets a long Thai line break there. Saving updates the open preview.
 
 ## heroTitle
-TH: ให้การถือบิตคอยน์ด้วยตนเอง เป็นเรื่องที่ทำได้
+TH: ให้การถือบิตคอยน์<wbr>ด้วยตนเอง<wbr> เป็นเรื่องที่ทำได้
 EN: Bitcoin ownership, made understandable.
 
 ## heroLead

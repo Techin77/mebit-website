@@ -34,9 +34,6 @@ export function Collateral() {
             <Box sx={{ position: 'relative', width: { xs: 'min(100%, 340px)', md: '100%' }, maxWidth: 460, aspectRatio: '1 / 1', mx: 'auto' }}>
               <DotCoinCanvas />
             </Box>
-            <Typography variant="body2" sx={{ textAlign: 'center', mt: 1, color: tokens.navy, fontWeight: 500 }}>
-              {lang === 'th' ? 'แตะที่เหรียญ เพื่อพลิกเป็นเงินบาท' : 'Tap the coin to turn it into baht'}
-            </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 7 }} sx={{ order: 2 }}>
             <motion.div {...rise(0.05)}>

@@ -87,6 +87,7 @@ export function NavBar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const onHome = pathname === routes.home;
   const items = [
     { to: routes.wallet, label: t.nav.wallet },
     { to: routes.collateral, label: t.nav.collateral },
@@ -99,15 +100,18 @@ export function NavBar() {
       color="inherit"
       elevation={0}
       sx={{
-        bgcolor: 'rgba(255,255,255,0.86)',
-        backdropFilter: 'saturate(180%) blur(14px)',
-        borderBottom: `1px solid ${scrolled ? tokens.softGrey : 'transparent'}`,
+        // Home: solid white bar with a rule, sitting above the gold stage (its logo centres the orbits)
+        bgcolor: onHome ? tokens.white : 'rgba(255,255,255,0.86)',
+        backdropFilter: onHome ? undefined : 'saturate(180%) blur(14px)',
+        borderBottom: `1px solid ${scrolled || onHome ? tokens.softGrey : 'transparent'}`,
         transition: 'border-color 240ms',
       }}
     >
       <Toolbar sx={{ maxWidth: tokens.pageMax + 128, width: '100%', mx: 'auto', px: { xs: 2, sm: 4, md: 8 }, minHeight: { xs: 64, md: 72 } }}>
         <ButtonBase component={NavLink} to={routes.home} aria-label={t.nav.home} sx={{ gap: 1.25, borderRadius: 1, mr: 'auto' }}>
-          <Logo size={40} alt="" />
+          <Box data-orbit-anchor sx={{ display: 'flex' }}>
+            <Logo size={40} alt="" />
+          </Box>
           <Typography sx={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '0.14em', fontSize: 15, color: tokens.navy }}>
             MEBIT
           </Typography>
