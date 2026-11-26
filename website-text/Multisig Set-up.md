@@ -15,8 +15,8 @@ TH: บริการช่วยสร้าง<wbr>กระเป๋า<wbr>
 EN: Helps you create a Bitcoin wallet
 
 ## lead
-TH: บริการช่วยสร้างกระเป๋าบิตคอยน์ในพื้นที่ปิดของเรา คุณดูแลเองทุกขั้นตอน โดยมีเราเป็นคนช่วยนำทางให้มั่นใจว่าไม่มีวันเห็นกุญแจของคุณ จบนัดหมายได้กระเป๋าบิตคอยน์พร้อมใช้
-EN: Helps you create a Bitcoin wallet in our close area. You're in charge of every steps yourself with us guiding to make sure no one ever see your private key. Walks out with ready-to-use Bitcoin wallet.
+TH: สร้างกระเป๋าบิตคอยน์แบบหลายลายเซ็น (multisig wallet) ในพื้นที่ปลอดภัยกับเรา เราคอยดูแลแนะนำเพื่อให้คุณได้ลงมือเองอย่างถูกต้องทุกขั้นตอน โดยที่เราไม่เห็นกุญแจของคุณ คุณได้กระเป๋าบิตคอยน์พร้อมใช้ หมดห่วงเรื่องทำผิดพลาด
+EN: Set up a Bitcoin multisig wallet with us in a secure space. We guide you through every step so you do it yourself — we never see your keys. Leave with a ready-to-use Bitcoin wallet, with no risk of making a mistake.
 
 ## cta
 TH: กรอกฟอร์มนัดหมาย
@@ -45,8 +45,8 @@ TH: สถานที่
 EN: Location
 
 ## facts › 2 › value
-TH: อาคาร CDC ปทุมธานี
-EN: CDC Building, pathumthani
+TH: CDC Foundation คลอง 5 ปทุมธานี
+EN: CDC Foundation, Klong 5, Pathumthani
 
 ## facts › 3 › label
 TH: รูปแบบ
@@ -71,7 +71,7 @@ TH: กรอกแบบฟอร์ม
 EN: Fill in the form
 
 ## steps › 1 › text
-TH: ทิ้งข้อมูลชื่อหรือนามแฝง และช่องทางติดต่อที่สะดวก พิจารณามอบช่องทางติดต่อที่ปกป้องความเป็นส่วนตัวของคุณ 
+TH: แจ้งชื่อจริงหรือนามแฝง และช่องทางติดต่อที่สะดวก พิจารณาใช้ช่องทางติดต่อที่ปกป้องความเป็นส่วนตัวของคุณ 
 EN: Leave your name or alias and preferred contact information. Consider providing a contact method that protects your privacy.
 
 ## steps › 2 › title
@@ -79,8 +79,8 @@ TH: คุยรายละเอียดผ่าน video call
 EN: Plan it on a video call
 
 ## steps › 2 › text
-TH: ทีมงานติดต่อกลับเพื่อออกแบบรูปแบบกระเป๋า แจ้งค่าบริการ และยืนยันวันนัดหมาย
-EN: We call you to design the wallet set-up, quote the service fee and confirm your appointment.
+TH: ทีมงานติดต่อกลับเพื่อสำรวจความต้องการของคุณ แนะนำรูปแบบกระเป๋าที่เหมาะสม แจ้งค่าบริการ และยืนยันวันนัดหมาย
+EN: We call you to explore your needs, suggest a suitable wallet configuration, quote the service fee, and confirm the appointment.
 
 ## steps › 3 › title
 TH: ชำระค่าบริการ
@@ -95,7 +95,7 @@ TH: รับบริการที่อาคาร CDC
 EN: Your session at CDC
 
 ## steps › 4 › text
-TH: ใช้เวลาประมาณครึ่งวัน คุณลงมือตั้งค่าเองทุกขั้นตอน โดยมีทีมงานคอยแนะนำ
+TH: ใช้เวลาประมาณครึ่งวัน คุณลงมือเองทุกขั้นตอน โดยมีทีมงานคอยแนะนำ
 EN: About half a day. You perform every step yourself, with our team guiding you.
 
 ## cardsEyebrow
@@ -117,20 +117,20 @@ TH: สิ่งที่คุณจะได้รับ
 EN: What you get
 
 ## cards › 1 › items › 1
-TH: กระเป๋าหลายลายเซ็นตามรูปแบบที่ตกลงกันไว้
+TH: กระเป๋าบิตคอยน์แบบหลายลายเซ็น (multisig wallet) ตามรูปแบบที่ตกลงกันไว้
 EN: A multisig wallet in the configuration we agree on
 
 ## cards › 1 › items › 2
-TH: ตั้งค่าโดยยึดแอป MEBIT เป็นหลัก และใช้ร่วมกับ software wallet อื่นได้ ทั้งตั้งค่าร่วมกันหรือส่งออกไปใช้
-EN: Built around the MEBIT app, and works with other software wallets, either set up together or exported
+TH: สร้างกระเป๋าผ่านแอป MEBIT เป็นหลัก แต่ได้กระเป๋ามาตรฐานเปิดที่ใช้ร่วมกับซอฟต์แวร์กระเป๋าอื่นได้ ไม่ว่าจะเป็นการติดตามยอดเงินและรับส่งเหรียญ
+EN: Built around the MEBIT app, but follows open standards — you can track balances and send or receive with other wallet software too
 
 ## cards › 1 › items › 3
-TH: หากวันหนึ่ง MEBIT ยุติการให้บริการ คุณยังกู้กระเป๋าในแอปอื่นได้
+TH: หากวันหนึ่ง MEBIT ยุติการให้บริการ คุณยังเข้าถึงเงินผ่านซอฟต์แวร์อื่นได้
 EN: Recoverable in other wallet apps, even if MEBIT stops operating
 
 ## cards › 1 › items › 4
-TH: คู่มือดูแลกระเป๋าเบื้องต้นแบบรูปแบบกลาง ทีมงานทำเครื่องหมายหรือเขียนกำกับเฉพาะของคุณลงไป คล้ายใบสั่งยา เพื่อไม่ให้ข้อมูลการตั้งค่าของคุณรั่วไหล
-EN: A general-format care guide. We tick or handwrite the parts specific to you, like a prescription, so your set-up details stay private
+TH: คู่มือดูแลกระเป๋าเบื้องต้น พร้อมหมายเหตุคำแนะนำเฉพาะตัวสำหรับรูปแบบกระเป๋าที่คุณเลือกสร้าง
+EN: A care guide in a general format, with notes and recommendations specific to your chosen wallet configuration, so your personal details stay private
 
 ## cards › 2 › eyebrow
 TH: 
@@ -141,7 +141,7 @@ TH: นโยบายความปลอดภัย
 EN: Safety policy
 
 ## cards › 2 › items › 1
-TH: คุณถือกุญแจทั้งหมดของกระเป๋าด้วยตัวเอง
+TH: คุณถือกุญแจทั้งหมดที่เกี่ยวข้องกับกระเป๋าของคุณเอง
 EN: You hold every key to your wallet
 
 ## cards › 2 › items › 2
@@ -149,16 +149,16 @@ TH: ใช้โทรศัพท์และคอมพิวเตอร์�
 EN: Only your own phones and computers are used, never ours
 
 ## cards › 2 › items › 3
-TH: ทีมงานจะไม่กดปุ่ม แตะหน้าจอ หรือสั่งงานอุปกรณ์ของคุณแทนไม่ว่ากรณีใด
+TH: ทีมงานจะไม่กดปุ่ม แตะหน้าจอ หรือสั่งงานอุปกรณ์ของคุณแทนตัวคุณเองไม่ว่ากรณีใด คุณลงมือเองทุกขั้นตอน
 EN: Our team never presses a button, touches a screen or enters a command on your devices
 
 ## cards › 2 › items › 4
-TH: ทีมงานจะไม่มอง seed ของคุณ หากมีผู้อื่นเห็นโดยไม่ได้ตั้งใจ เราจะเริ่มขั้นตอนใหม่ทั้งหมด
-EN: We never look at your seed. If anyone else sees it by accident, we restart the whole process
+TH: ตลอดกระบวนการทีมงานจะไม่รับรู้ seed phrase หรือ private key ของคุณ หากข้อมูลที่ละเอียดอ่อนถูกเปิดเผยโดยไม่ได้ตั้งใจเราจะเริ่มขั้นตอนใหม่ทั้งหมด
+EN: We never look at your seed phrase or private key throughout the entire process. If sensitive information is accidentally exposed, we restart the whole process from the beginning
 
 ## cards › 2 › items › 5
-TH: ห้องรับบริการมีกล้องวงจรปิดบันทึกเป็นหลักฐาน ยกเว้นบริเวณที่คุณสร้าง seed
-EN: The room is recorded on CCTV for your protection, except the area where you create your seed
+TH: พื้นที่รับบริการมีกล้องวงจรปิดบันทึกเป็นหลักฐาน ยกเว้นบริเวณที่คุณทำขั้นตอนที่เกี่ยวข้องกับข้อมูลที่ละเอียดอ่อน
+EN: The room is recorded on CCTV for your protection, except the area where you handle sensitive information
 
 ## cards › 3 › eyebrow
 TH: 
@@ -193,7 +193,7 @@ TH: ค่าบริการและการนัดหมาย
 EN: Fees and booking
 
 ## cards › 4 › items › 1
-TH: ทีมงานแจ้งค่าบริการเมื่อติดต่อกลับ หากให้เราจัดเตรียม hardware wallet จะรวมค่าอุปกรณ์ไว้ในราคา
+TH: ทีมงานแจ้งค่าบริการเมื่อติดต่อกลับ หากต้องการให้เราจัดหาอุปกรณ์ Hardware Wallet ค่าอุปกรณ์จะถูกรวมไว้ในราคาค่าบริการ
 EN: We quote the fee when we contact you. If we prepare a hardware wallet for you, its cost is included
 
 ## cards › 4 › items › 2
@@ -205,8 +205,8 @@ TH: หากยกเลิกหลังชำระเงิน เราจ
 EN: If you cancel after paying, we first offer to reschedule. If that does not work, we will look at a partial refund
 
 ## cards › 4 › items › 4
-TH: ระยะเวลาที่แจ้งทั้งหมด นับเฉพาะเวลาทำการ จันทร์–ศุกร์ 09:00–18:00 น.
-EN: All stated timeframes count business hours only: Mon–Fri, 9:00 AM–6:00 PM
+TH: เวลาทำการของเราคือเฉพาะวันจันทร์–ศุกร์ 09:00–18:00 น.
+EN: Our business hours are Monday–Friday, 9:00 AM–6:00 PM only
 
 ## cards › 5 › eyebrow
 TH: 
@@ -217,7 +217,7 @@ TH: เตรียมตัวก่อนวันนัด
 EN: Before your session
 
 ## cards › 5 › items › 1
-TH: พาทุกคนที่เกี่ยวข้องกับกระเป๋ามาพร้อมกัน เพราะแต่ละคนต้องสร้างกุญแจของตัวเอง
+TH: พาทุกคนที่เกี่ยวข้องกับกระเป๋ามาพร้อมกัน เพราะแต่ละคนต้องสร้างและดูแลกุญแจของตัวเอง
 EN: Bring everyone who will share the wallet. Each person creates their own key
 
 ## cards › 5 › items › 2
@@ -225,7 +225,7 @@ TH: นำโทรศัพท์และคอมพิวเตอร์ข�
 EN: Bring each person's phone and computer
 
 ## cards › 5 › items › 3
-TH: หากมี hardware wallet อยู่แล้ว นำมาด้วย และแจ้งรุ่นให้ทีมงานทราบตอนคุยรายละเอียด
+TH: หากมี Hardware Wallet อยู่แล้ว และต้องการใช้เป็นกุญแจส่วนหนึ่งของกระเป๋าที่จะสร้างใหม่ ให้นำมาด้วย และแจ้งรุ่นให้ทีมงานทราบล่วงหน้า
 EN: If you already own a hardware wallet, bring it and tell us the model during the planning call
 
 ## cards › 6 › eyebrow
@@ -237,20 +237,20 @@ TH: ข้อควรระวัง เพราะคุณคือคนร
 EN: Please note, keys are a responsibility
 
 ## cards › 6 › items › 1
-TH: คุณถือและรับผิดชอบกุญแจและ seed สำรองเอง หากสูญหาย บริษัทไม่สามารถกู้คืนให้ได้
+TH: คุณรับผิดชอบกุญแจและ seed phrase ด้วยตัวเอง หากสูญหาย บริษัทไม่สามารถกู้คืนให้ได้
 EN: You hold, and are responsible for, your keys and seed backup. If they are lost, the company cannot recover them
 
 ## cards › 6 › items › 2
-TH: ทีมงานจะไม่ขอ seed หรือกุญแจของคุณ ไม่ว่ากรณีใด
+TH: ทีมงานจะไม่ขอ seed phrase หรือกุญแจของคุณ ไม่ว่ากรณีใด
 EN: Our team will never ask for your seed or keys, under any circumstances
 
 ## cards › 6 › items › 3
-TH: ข้อมูลในแบบฟอร์มใช้เพื่อการนัดหมายเท่านั้น
+TH: ข้อมูลในแบบฟอร์มนี้ใช้เพื่อการนัดหมายเท่านั้น
 EN: Form details are used only to arrange your appointment
 
 ## closingTitle
 TH: สนใจรับบริการ
-EN: Find interested
+EN: Interested in our service
 
 ## closingText
 TH: กรอกแบบฟอร์มไว้ก่อน ทีมงานจะติดต่อกลับเพื่อคุยรายละเอียดและยืนยันวันนัด
