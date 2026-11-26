@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#002B49" />
+    <meta name="description" content="MEBIT — Bitcoin Saving Company. การเป็นเจ้าของบิตคอยน์ ที่ทุกคนเข้าใจได้" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>MEBIT — Bitcoin Saving Company</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // If the app script fails before React mounts, show the error rather than a blank page.
+      window.addEventListener('error', function (e) {
+        var root = document.getElementById('root');
+        if (root && !root.hasChildNodes()) {
+          root.innerHTML = '<pre style="padding:24px;font:13px/1.5 monospace;white-space:pre-wrap;color:#002B49">' +
+            'Page failed to load:\n' + (e.message || e) + '\n' + (e.filename || '') + ':' + (e.lineno || '') + '</pre>';
+        }
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
