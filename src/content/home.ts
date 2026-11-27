@@ -4,7 +4,9 @@ import { withText } from './withText';
 type Pillar = { key: 'wallet' | 'multisig' | 'collateral'; eyebrow: string; title: string; desc: string; cta: string };
 
 const homeText: Bilingual<{
-  heroTitle: string;
+  heroEyebrow: string;
+  /** The hero headline types these out one after another. */
+  heroLines: string[];
   heroLead: string;
   heroCta: string;
   aboutEyebrow: string;
@@ -14,7 +16,8 @@ const homeText: Bilingual<{
   pillars: Pillar[];
 }> = {
   th: {
-    heroTitle: 'การเป็นเจ้าของ\u200bบิตคอยน์ ที่ทุกคนเข้าใจได้',
+    heroEyebrow: 'Bitcoin Wallet · Bitcoin for Cash · Set-up Service',
+    heroLines: ['กระเป๋าบิตคอยน์ ที่คุณถือกุญแจเอง', 'รับเงินบาท โดยไม่ต้องขายบิตคอยน์', 'ตั้งค่ากระเป๋า ด้วยมือคุณเอง'],
     heroLead: 'ขั้นตอนชัดเจน ข้อมูลโปร่งใส และคุณเป็นผู้ควบคุมทุกการตัดสินใจ',
     heroCta: 'บริการของเรา',
     aboutEyebrow: 'รู้จัก MEBIT',
@@ -47,7 +50,8 @@ const homeText: Bilingual<{
     ],
   },
   en: {
-    heroTitle: 'Bitcoin ownership, made understandable.',
+    heroEyebrow: 'Bitcoin Wallet · Bitcoin for Cash · Set-up Service',
+    heroLines: ['A Bitcoin wallet, your keys', 'Cash without selling your bitcoin', 'Set up your wallet, guided'],
     heroLead: 'Clear steps. Transparent information. More control over the journey.',
     heroCta: 'Our services',
     aboutEyebrow: 'About MEBIT',

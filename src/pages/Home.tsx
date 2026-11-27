@@ -1,24 +1,26 @@
 import { Box, Button, Grid2 as Grid, Stack, Typography } from '@mui/material';
 import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import { motion, useReducedMotion } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { routes } from '../content/common';
 import { home } from '../content/home';
 import { useCopy } from '../i18n';
 import { springs, tokens } from '../theme';
-import { OrbitField } from '../components/OrbitField';
+import { createSpray, type Spray } from '../components/spray';
 import { DotCoinCanvas } from '../components/DotCoin';
 import { PillarCard } from '../components/PillarCard';
 import { HomeScreen, PhoneFrame } from '../components/AppScreens';
 import { HardwareTrio } from './Multisig';
-import { AccentLine, Eyebrow, Phrases, Reveal, Section, SectionHead } from '../components/primitives';
+import { Eyebrow, Reveal, Section, SectionHead } from '../components/primitives';
 
 /**
- * Home, v3 (mockups/home-gold-orbit.html): one Mercury Gold "stage" under the white header holds the
- * hero and the services. Elements borrowed from the booth backdrop: concentric circle orbits centred
- * on the header logo with travelling planets, a fine navy dot ground and a large dot-grid ₿.
+ * Home: the hero follows site-old (gold ground, morphing dot field, typed headline cycling through
+ * the three services); the services sit on white with a faint dot-grid ₿ behind them.
  * Text comes from content/home.ts (and website-text/Home.md); cards stack top to bottom.
  */
+/** The old site's (mebit.co.th) deeper hero gold: its white dot field barely shows on the lighter brand gold. */
+const HERO_GOLD = '#EEB42A';
+
 /** Each service card's backdrop is that page's hero image. */
 const cardArt = {
   wallet: (
@@ -43,7 +45,58 @@ const cardArt = {
 export function Home() {
   const t = useCopy(home);
   const reduce = useReducedMotion();
-  const stageRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const sprayRef = useRef<Spray | null>(null);
+  const headlineRef = useRef<HTMLSpanElement | null>(null);
+
+  // The dot field starts with the hero and stops when it leaves. Start and stop live in one effect,
+  // so React's dev-mode double mount (StrictMode) restarts it instead of leaving it stopped.
+  useEffect(() => {
+    const el = canvasRef.current;
+    if (!el) return;
+    const spray = createSpray(el, { top: 30 }); // shapes sit as on mebit.co.th, below our solid header
+    sprayRef.current = spray;
+    return () => {
+      spray?.destroy();
+      sprayRef.current = null;
+    };
+  }, []);
+
+  // Types each hero line, holds it, deletes it, then moves to the next (from site-old).
+  const linesKey = t.heroLines.join('\n');
+  useEffect(() => {
+    const lines = linesKey.split('\n');
+    const el = headlineRef.current;
+    if (!el) return;
+    if (reduce) {
+      el.textContent = lines[0];
+      return;
+    }
+    let li = 0;
+    let ci = 0;
+    let deleting = false;
+    let timer: ReturnType<typeof setTimeout>;
+    const step = () => {
+      const chars = Array.from(lines[li % lines.length]);
+      ci = deleting ? ci - 1 : ci + 1;
+      el.textContent = chars.slice(0, Math.max(0, ci)).join('');
+      let delay = deleting ? 34 : 78;
+      if (!deleting && ci >= chars.length) {
+        deleting = true;
+        delay = 2200;
+      } else if (deleting && ci <= 0) {
+        deleting = false;
+        li++;
+        delay = 420;
+      }
+      timer = setTimeout(step, delay);
+    };
+    step();
+    return () => {
+      clearTimeout(timer);
+      el.textContent = '';
+    };
+  }, [linesKey, reduce]);
   const rise = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -53,43 +106,87 @@ export function Home() {
 
   return (
     <>
+      {/* HERO — ported from site-old: gold ground, morphing dot field, typed headline */}
       <Box
-        ref={stageRef}
-        sx={{
-          position: 'relative',
-          overflow: 'hidden',
-          bgcolor: tokens.gold,
-          color: tokens.navy,
-          // fine navy dot ground, as on the backdrop
-          backgroundImage: 'radial-gradient(rgba(0,43,73,0.09) 1px, transparent 1.3px)',
-          backgroundSize: '18px 18px',
+        component="section"
+        onMouseMove={(e: React.MouseEvent<HTMLElement>) => {
+          const c = canvasRef.current;
+          if (!c || !sprayRef.current) return;
+          const r = c.getBoundingClientRect();
+          sprayRef.current.seed(e.clientX - r.left, e.clientY - r.top);
         }}
+        onClick={() => sprayRef.current?.cycle()}
+        sx={{ position: 'relative', overflow: 'hidden', bgcolor: HERO_GOLD, color: tokens.navy }}
       >
-        <OrbitField anchorSelector="[data-orbit-anchor]" parentRef={stageRef} tone="gold" />
-
-        {/* HERO — no logo here: the rings circle the header mark instead */}
-        <Section
-          sx={{ position: 'relative', zIndex: 1, bgcolor: 'transparent', pt: { xs: 10, md: 16 }, pb: { xs: 8, md: 12 } }}
-          inner={{ textAlign: 'center' }}
+        <Box
+          component="canvas"
+          ref={canvasRef}
+          aria-hidden
+          sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', pointerEvents: 'none' }}
+        />
+        <Stack
+          alignItems="center"
+          spacing={3.25}
+          sx={{
+            position: 'relative',
+            textAlign: 'center',
+            px: { xs: 2, sm: 4 },
+            pt: 'clamp(96px, 13vw, 150px)',
+            pb: 'clamp(72px, 10vw, 108px)',
+          }}
         >
+          <motion.div {...rise(0.15)}>
+            <Typography sx={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: tokens.navy }}>
+              {t.heroEyebrow}
+            </Typography>
+          </motion.div>
           <motion.div {...rise(0.25)}>
             <Typography
-              data-orbit-avoid
               variant="h1"
               component="h1"
-              sx={{ color: tokens.navy, maxWidth: 860, width: 'fit-content', mx: 'auto', fontSize: 'clamp(2.25rem, 5.2vw, 4.25rem)' }}
+              aria-label={t.heroLines.join(' · ')}
+              sx={{
+                maxWidth: 960,
+                mx: 'auto',
+                minHeight: '2.1em', // room for two lines, so the page doesn't jump while typing
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 'clamp(34px, 5.6vw, 80px)',
+                lineHeight: 1.04,
+                letterSpacing: '-0.035em',
+                color: tokens.navy,
+              }}
             >
-              <Phrases text={t.heroTitle} />
+              <Box component="span" sx={{ display: 'block' }}>
+              <span ref={headlineRef} aria-hidden />
+              <Box
+                component="span"
+                aria-hidden
+                sx={{
+                  display: 'inline-block',
+                  width: '0.06em',
+                  height: '0.92em',
+                  ml: '2px',
+                  verticalAlign: '-0.1em',
+                  bgcolor: tokens.navy,
+                  borderRadius: '2px',
+                  animation: 'mbCaret 1s step-end infinite',
+                  '@keyframes mbCaret': { '50%': { opacity: 0 } },
+                }}
+              />
+              </Box>
             </Typography>
-            <AccentLine sx={{ mt: 3, mx: 'auto', bgcolor: tokens.navy }} />
           </motion.div>
           <motion.div {...rise(0.35)}>
-            <Typography data-orbit-avoid variant="subtitle1" sx={{ mt: 3, color: tokens.slate, maxWidth: 560, width: 'fit-content', mx: 'auto' }}>
+            <Typography variant="subtitle1" sx={{ color: tokens.navy, maxWidth: 560, mx: 'auto' }}>
               {t.heroLead}
             </Typography>
             <Button
-              data-orbit-avoid
-              onClick={toServices}
+              onClick={(e) => {
+                e.stopPropagation();
+                toServices();
+              }}
               variant="contained"
               size="large"
               endIcon={<ArrowDownwardRoundedIcon />}
@@ -109,9 +206,11 @@ export function Home() {
               {t.heroCta}
             </Button>
           </motion.div>
-        </Section>
+        </Stack>
+      </Box>
 
-        {/* SERVICES — the orbits carry on behind them; a large dot-grid ₿ sits in the ground */}
+      <Box sx={{ position: 'relative', overflow: 'hidden', bgcolor: tokens.white, color: tokens.navy }}>
+        {/* SERVICES — on white; a large, faint dot-grid ₿ sits in the ground */}
         <Box
           aria-hidden
           sx={{
@@ -127,10 +226,10 @@ export function Home() {
           <DotCoinCanvas rgb="0,43,73" maxAlpha={0.07} still pitch={9} dot={6} />
         </Box>
         <Section id="services" sx={{ position: 'relative', zIndex: 1, bgcolor: 'transparent', scrollMarginTop: 72, pt: { xs: 6, md: 10 }, pb: { xs: 10, md: 16 } }}>
-          <Box data-orbit-avoid sx={{ width: 'fit-content', maxWidth: '100%' }}>
+          <Box sx={{ width: 'fit-content', maxWidth: '100%' }}>
             <SectionHead eyebrow={t.pillarsEyebrow} title={t.pillarsTitle} />
           </Box>
-          <Stack spacing={2.5} data-orbit-avoid>
+          <Stack spacing={2.5}>
             {t.pillars.map((p, i) => (
               <Reveal key={p.key} delay={i * 0.08}>
                 <PillarCard to={routes[p.key]} eyebrow={p.eyebrow} title={p.title} desc={p.desc} cta={p.cta} art={cardArt[p.key]} />

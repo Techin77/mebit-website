@@ -6,9 +6,23 @@ page: home
 > Keep the `##` headings as they are: they tell the website where each line goes.
 > `<wbr>` is an invisible mark that lets a long Thai line break there. Saving updates the open preview.
 
-## heroTitle
-TH: ให้การถือบิตคอยน์<wbr>ด้วยตนเอง<wbr> เป็นเรื่องที่ทำได้
-EN: Bitcoin ownership, made understandable.
+## heroEyebrow
+TH: กระเป๋าบิตคอยน์ · บิตคอยน์ค้ำรับเงินสด · ช่วยสร้างกระเป๋าบิตคอยน์
+EN: Bitcoin Wallet · Bitcoin for Cash · Set-up Service
+
+# heroLines — the animated hero title: types line 1, then 2, then 3, and repeats
+
+## heroLines › 1
+TH: แอปกระเป๋าบิตคอยน์ที่กุญแจอยู่กับคุณ
+EN: A Bitcoin wallet where the keys stay with you
+
+## heroLines › 2
+TH: สินเชื่อเงินบาทที่ใช้บิตคอยน์เป็นหลักค้ำประกัน
+EN: A Thai baht loan using Bitcoin as collateral
+
+## heroLines › 3
+TH: ช่วยสร้างกระเป๋าบิตคอยน์แบบหลายลายเซ็น
+EN: Helps you set up a Bitcoin multisig wallet with us in a secure space
 
 ## heroLead
 TH: เพราะ self-custody เป็นเรื่องของทุกคน จึงเป็นสิ่งที่ต้องเข้าถึงได้
