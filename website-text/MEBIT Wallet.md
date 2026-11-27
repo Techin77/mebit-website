@@ -30,6 +30,14 @@ EN: Coming soon
 TH: App Store
 EN: App Store
 
+## iosBeta
+TH: ทดลองใช้บน iOS
+EN: iOS beta on
+
+## testFlight
+TH: TestFlight
+EN: TestFlight
+
 ## googlePlay
 TH: Google Play
 EN: Google Play

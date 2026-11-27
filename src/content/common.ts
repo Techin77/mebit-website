@@ -8,7 +8,7 @@ export const links = {
   multisigForm: 'http://mebit.co.th/btc2026',
   loanRegister: 'https://loan.mebit.co.th/',
   github: 'https://github.com/Krittanai2933/mebit', // TBD: confirm the public repo to link
-  appStore: null as string | null, // TBD — app not yet released
+  appStore: 'https://testflight.apple.com/join/8P229SjG' as string | null, // iOS beta (TestFlight) until App Store release
   googlePlay: null as string | null, // TBD — app not yet released
 };
 

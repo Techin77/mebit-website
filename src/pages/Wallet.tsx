@@ -22,7 +22,7 @@ function StoreButton({ icon, store, note, href }: { icon: React.ReactNode; store
   return (
     <Button
       variant="outlined"
-      href={href ?? undefined}
+      {...(href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {})}
       disabled={!href}
       startIcon={icon}
       sx={{
@@ -72,7 +72,7 @@ export function Wallet() {
             </motion.div>
             <motion.div {...rise(0.25)}>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} sx={{ mt: 5 }}>
-                <StoreButton icon={<AppleIcon />} store={t.appStore} note={t.comingSoon} href={links.appStore} />
+                <StoreButton icon={<AppleIcon />} store={t.testFlight} note={t.iosBeta} href={links.appStore} />
                 <StoreButton icon={<ShopIcon />} store={t.googlePlay} note={t.comingSoon} href={links.googlePlay} />
               </Stack>
             </motion.div>

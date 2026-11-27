@@ -15,6 +15,8 @@ const walletText: Bilingual<{
   status: string;
   comingSoon: string;
   appStore: string;
+  iosBeta: string;
+  testFlight: string;
   googlePlay: string;
   mock: {
     heading: string;
@@ -116,6 +118,8 @@ const walletText: Bilingual<{
     status: 'อยู่ระหว่างทดสอบ · ยังไม่รองรับเงินจริง',
     comingSoon: 'เร็ว ๆ นี้',
     appStore: 'App Store',
+    iosBeta: 'ทดลองใช้บน iOS',
+    testFlight: 'TestFlight',
     googlePlay: 'Google Play',
     mock: {
       heading: 'Wallet ของคุณ',
@@ -263,6 +267,8 @@ const walletText: Bilingual<{
     status: 'In testing · not for real funds yet',
     comingSoon: 'Coming soon',
     appStore: 'App Store',
+    iosBeta: 'iOS beta on',
+    testFlight: 'TestFlight',
     googlePlay: 'Google Play',
     mock: {
       heading: 'Your wallets',
